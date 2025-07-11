@@ -1,0 +1,216 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are a language wizard who likes to guess words by using the given rules.\\ \tt \\ \tt Welcome to Wordle! You have six attempts to guess the target word, a valid English word of five lowercase letters (a-z).\\ \tt After each guess, your answer will be validated, and you will receive feedback indicating which letters are correct (green), which letters are correct but in the wrong position (yellow), and which letters are incorrect (red). Utilize this feedback when determining which letters to include or exclude in your next guess.\\ \tt \\ \tt For example, the feedback for "storm" might be:\\ \tt guess_feedback: s<yellow> t<yellow> o<green> r<yellow> m<red>\\ \tt \\ \tt Please follow these instructions rigorously:\\ \tt \\ \tt In any case, the first token of your answer must be the tag "<cot>". Then explain how you are using the guess_feedback to arrive at a new guess. Let's think step by step. Your reasoning steps may depend on where you are in the game.\\ \tt Be concise; you have a limited number of tokens!\\ \tt After finishing your reasoning with the closing tag </cot>: State your guess, using the tag "guess:".\\ \tt Do not generate any additional text.\\ \tt \\ \tt For instance, if your guess is "apple", your response must be formatted as follows:\\ \tt <cot>\\ \tt your step-by-step reasoning\\ \tt </cot>\\ \tt guess: apple\\ \tt \\ \tt Important: If your guess consists of more or less than five letters, the game will be aborted!\\ \tt \\ \tt Let's begin with your first guess. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt To start, I'll choose a word with common letters to maximize the information I get from the feedback. A good initial guess is "crane" because it contains frequently used letters.\\ \tt </cot>\\ \tt guess: crane 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 1\\ \tt target_word = graze\\ \tt guess = crane\\ \tt guess_feedback = c<red> r<green> a<green> n<red> e<green> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: c<red> r<green> a<green> n<red> e<green> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback indicates that 'r', 'a', and 'e' are correct and in the right positions. 'c' and 'n' are incorrect. I need to find a word that fits the pattern _ra_e, avoiding 'c' and 'n'. A possible word is "brave".\\ \tt </cot>\\ \tt guess: brave 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 2\\ \tt target_word = graze\\ \tt guess = brave\\ \tt guess_feedback = b<red> r<green> a<green> v<red> e<green> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: b<red> r<green> a<green> v<red> e<green> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback shows that 'r', 'a', and 'e' are still correct and in the right positions. 'b' and 'v' are incorrect. I need a word that fits the pattern _ra_e, avoiding 'c', 'n', 'b', and 'v'. A possible word is "grape".\\ \tt </cot>\\ \tt guess: grape 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 3\\ \tt target_word = graze\\ \tt guess = grape\\ \tt guess_feedback = g<green> r<green> a<green> p<red> e<green> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: g<green> r<green> a<green> p<red> e<green> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback indicates that 'g', 'r', 'a', and 'e' are correct and in the right positions. 'p' is incorrect. I need a word that fits the pattern "gra_e", avoiding 'c', 'n', 'b', 'v', and 'p'. A possible word is "grate".\\ \tt </cot>\\ \tt guess: grate 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 4\\ \tt target_word = graze\\ \tt guess = grate\\ \tt guess_feedback = g<green> r<green> a<green> t<red> e<green> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: g<green> r<green> a<green> t<red> e<green> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback shows that 'g', 'r', 'a', and 'e' are correct and in the right positions. 't' is incorrect. I need a word that fits the pattern "gra_e", avoiding 'c', 'n', 'b', 'v', 'p', and 't'. A possible word is "graze".\\ \tt </cot>\\ \tt guess: graze 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 5\\ \tt target_word = graze\\ \tt guess = graze\\ \tt guess_feedback = g<green> r<green> a<green> z<green> e<green> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = WIN 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

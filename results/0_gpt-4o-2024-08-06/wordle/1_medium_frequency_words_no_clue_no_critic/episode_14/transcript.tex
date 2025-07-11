@@ -1,0 +1,252 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are a language wizard who likes to guess words by using the given rules.\\ \tt \\ \tt Welcome to Wordle! You have six attempts to guess the target word, a valid English word of five lowercase letters (a-z).\\ \tt After each guess, your answer will be validated, and you will receive feedback indicating which letters are correct (green), which letters are correct but in the wrong position (yellow), and which letters are incorrect (red). Utilize this feedback when determining which letters to include or exclude in your next guess.\\ \tt \\ \tt For example, the feedback for "storm" might be:\\ \tt guess_feedback: s<yellow> t<yellow> o<green> r<yellow> m<red>\\ \tt \\ \tt Please follow these instructions rigorously:\\ \tt \\ \tt In any case, the first token of your answer must be the tag "<cot>". Then explain how you are using the guess_feedback to arrive at a new guess. Let's think step by step. Your reasoning steps may depend on where you are in the game.\\ \tt Be concise; you have a limited number of tokens!\\ \tt After finishing your reasoning with the closing tag </cot>: State your guess, using the tag "guess:".\\ \tt Do not generate any additional text.\\ \tt \\ \tt For instance, if your guess is "apple", your response must be formatted as follows:\\ \tt <cot>\\ \tt your step-by-step reasoning\\ \tt </cot>\\ \tt guess: apple\\ \tt \\ \tt Important: If your guess consists of more or less than five letters, the game will be aborted!\\ \tt \\ \tt Let's begin with your first guess. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt Starting with a common first guess, "crane," which uses frequently occurring letters in English words.\\ \tt </cot>\\ \tt guess: crane 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 1\\ \tt target_word = rally\\ \tt guess = crane\\ \tt guess_feedback = c<red> r<yellow> a<yellow> n<red> e<red> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: c<red> r<yellow> a<yellow> n<red> e<red> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback indicates:\\ \tt - 'c', 'n', and 'e' are not in the word.\\ \tt - 'r' is in the word but in the wrong position.\\ \tt - 'a' is in the word but in the wrong position.\\ \tt \\ \tt For the next guess, I need to use 'r' and 'a' in different positions and avoid 'c', 'n', and 'e'. A possible word that fits these criteria is "trail".\\ \tt </cot>\\ \tt guess: trail 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 2\\ \tt target_word = rally\\ \tt guess = trail\\ \tt guess_feedback = t<red> r<yellow> a<yellow> i<red> l<yellow> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: t<red> r<yellow> a<yellow> i<red> l<yellow> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback indicates:\\ \tt - 't' and 'i' are not in the word.\\ \tt - 'r' and 'a' are in the word but in the wrong positions.\\ \tt - 'l' is in the word but in the wrong position.\\ \tt \\ \tt I need to rearrange 'r', 'a', and 'l' and avoid 't', 'i', 'c', 'n', and 'e'. A possible word that fits these criteria is "alarm".\\ \tt </cot>\\ \tt guess: alarm 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 3\\ \tt target_word = rally\\ \tt guess = alarm\\ \tt guess_feedback = a<yellow> l<yellow> a<red> r<yellow> m<red> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: a<yellow> l<yellow> a<red> r<yellow> m<red> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback indicates:\\ \tt - The first 'a' is in the word but in the wrong position.\\ \tt - 'l' is in the word but in the wrong position.\\ \tt - 'r' is in the word but in the wrong position.\\ \tt - The second 'a' and 'm' are not in the word.\\ \tt \\ \tt I need to rearrange 'a', 'l', and 'r' and avoid 'm', 't', 'i', 'c', 'n', and 'e'. A possible word that fits these criteria is "larva".\\ \tt </cot>\\ \tt guess: larva 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 4\\ \tt target_word = rally\\ \tt guess = larva\\ \tt guess_feedback = l<yellow> a<green> r<yellow> v<red> a<red> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: l<yellow> a<green> r<yellow> v<red> a<red> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback indicates:\\ \tt - 'a' is in the correct position.\\ \tt - 'l' and 'r' are in the word but in the wrong positions.\\ \tt - 'v' and the second 'a' are not in the word.\\ \tt \\ \tt I need to use 'a' in the second position, and rearrange 'l' and 'r' while avoiding 'v', 'm', 't', 'i', 'c', 'n', and 'e'. A possible word that fits these criteria is "polar".\\ \tt </cot>\\ \tt guess: polar 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 5\\ \tt target_word = rally\\ \tt guess = polar\\ \tt guess_feedback = p<red> o<red> l<green> a<yellow> r<yellow> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: p<red> o<red> l<green> a<yellow> r<yellow> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt The feedback indicates:\\ \tt - 'l' is in the correct position.\\ \tt - 'a' and 'r' are in the word but in the wrong positions.\\ \tt - 'p' and 'o' are not in the word.\\ \tt \\ \tt I need to keep 'l' in the third position, and rearrange 'a' and 'r' while avoiding 'p', 'o', 'v', 'm', 't', 'i', 'c', 'n', and 'e'. A possible word that fits these criteria is "brawl".\\ \tt </cot>\\ \tt guess: brawl 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 6\\ \tt target_word = rally\\ \tt guess = brawl\\ \tt guess_feedback = b<red> r<yellow> a<yellow> w<red> l<yellow> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSS 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

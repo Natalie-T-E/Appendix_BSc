@@ -1,0 +1,60 @@
+You are a language wizard who likes to guess words by using the given rules.
+
+Welcome to Wordle! You have six attempts to guess the target word, a valid English word of five lowercase letters (a-z).
+After each guess, your answer will be validated, and you will receive feedback indicating which letters are correct (green), which letters are correct but in the wrong position (yellow), and which letters are incorrect (red). Utilize this feedback when determining which letters to include or exclude in your next guess.
+
+Please follow these steps rigorously:
+
+In any case, the first token of your answer must be the tag "<cot>". The demanded reasoning steps to be enclosed in <cot></cot> depend on where you are in the game.
+
+For the starting guess:
+There is only one step within <cot></cot>: Provide a short explanation for your guess.
+Then state your guess, using the tag "guess:".
+
+For all subsequent guesses:
+Please adhere to the following 3 reasoning steps within <cot></cot>:
+1) Explain the provided feedback. Be specific about both letters and positions (1-5). In addition, it can be helpful to mention relevant information from the feedbacks to your previous guesses, for example knowledge gained from the first and second feedback when explaining the third feedback.
+2) Write a symbolic representation of what you know so far about the target word. Define a variable "include" if you already encountered any green letters, and map these letters to their known positions. If there is only one remaining possible position for a yellow letter, it should also be included in the variable "include". Define a variable "try" to formalize your conclusion regarding letters you know are in the target word but not yet where (when there is more than one position left to try), mapping these letters to their possible positions. Represent the set of letters that have been ruled out by defining a variable "avoid". In addition, you may also define possible patterns.
+3) Propose a valid English word as a guess in accordance with the constraints formulated in step 2. Important: Take your first idea that does not contradict the constraints. For transparency, explain your reasoning letter by letter. Be concise, you have a limited number of tokens! You must finish this step with the closing tag </cot>.
+Then state the guess you chose in step 3 once more, using the tag "guess:". Please do not come up with a new guess at this point.
+
+Do not generate any additional text.
+
+-----------
+Here is an example for a starting guess:
+Prompt: … Let's begin with your first guess.
+
+Example Answer:
+<cot>
+I'm starting with a common five-letter English word, which includes frequent consonants and vowels.
+</cot>
+guess: house
+
+-----------
+Here is an example for a second/third/fourth/fifth/sixth guess:
+(For context: In this example, the last guess was "salad".)
+Example prompt: guess_feedback: s<red> a<red> l<yellow> a<green> d<red>
+
+Example Answer:
+<cot>
+1. Feedback explanation:
+The letter 'a' is correct at position 4 (and not at position 2). I also learned that I can rule out the letters 's' and 'd' completely. The letter 'l' is in the word, but not in the third position. From a previous feedback, I know that 'l' is not the first letter, either. This means 'l' can be at position 2 or 5 (the fourth position is ruled out implicitly via the green 'a').
+2. Symbolic representation of conclusion:
+include = {a: 4}
+try = {l: (2|5)}
+avoid = {s, d}
+possible patterns: '_l_a_' or '___al' where '_' is a placeholder for a new letter.
+3. Guess and reasoning:
+Considering common English words in strict accordance with the constraints, "float" is a good next guess. It matches the pattern '_l_a_' and contains new letters that have not been ruled out.
+My guess "float" consists of the 5 letters f, l, o, a, t.
+— f at position 1 (introducing a new consonant).
+— l at position 2 (correct letter at one of the remaining possible positions).
+— o at position 3 (introducing a new vowel).
+— a at position 4 (as required).
+— t at position 5 (introducing another common consonant).
+</cot>
+guess: float
+
+-----------
+Remember the formal requirement to start each answer with the tag <cot>.
+Let's begin with your first guess.

@@ -1,0 +1,252 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are a language wizard who likes to guess words by using the given rules.\\ \tt \\ \tt Welcome to Wordle! You have six attempts to guess the target word, a valid English word of five lowercase letters (a-z).\\ \tt After each guess, your answer will be validated, and you will receive feedback indicating which letters are correct (green), which letters are correct but in the wrong position (yellow), and which letters are incorrect (red). Utilize this feedback when determining which letters to include or exclude in your next guess.\\ \tt \\ \tt For example, the feedback for "storm" might be:\\ \tt guess_feedback: s<yellow> t<yellow> o<green> r<yellow> m<red>\\ \tt \\ \tt Please follow these instructions rigorously:\\ \tt \\ \tt In any case, the first token of your answer must be the tag "<cot>". Then explain how you are using the guess_feedback to arrive at a new guess. Let's think step by step. Your reasoning steps may depend on where you are in the game.\\ \tt Be concise; you have a limited number of tokens!\\ \tt After finishing your reasoning with the closing tag </cot>: State your guess, using the tag "guess:".\\ \tt Do not generate any additional text.\\ \tt \\ \tt For instance, if your guess is "apple", your response must be formatted as follows:\\ \tt <cot>\\ \tt your step-by-step reasoning\\ \tt </cot>\\ \tt guess: apple\\ \tt \\ \tt Important: If your guess consists of more or less than five letters, the game will be aborted!\\ \tt \\ \tt Let's begin with your first guess. 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt Starting with a common first guess, "crane," which includes frequently used letters in English words.\\ \tt </cot>\\ \tt guess: crane 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 1\\ \tt target_word = bench\\ \tt guess = crane\\ \tt guess_feedback = c<yellow> r<red> a<red> n<yellow> e<yellow> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: c<yellow> r<red> a<red> n<yellow> e<yellow> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt From the feedback:\\ \tt - 'c' is correct but in the wrong position.\\ \tt - 'r' is incorrect.\\ \tt - 'a' is incorrect.\\ \tt - 'n' is correct but in the wrong position.\\ \tt - 'e' is correct but in the wrong position.\\ \tt \\ \tt Based on this, I need a word that includes 'c', 'n', and 'e' but in different positions, and does not include 'r' or 'a'. A possible word is "clone".\\ \tt </cot>\\ \tt guess: clone 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 2\\ \tt target_word = bench\\ \tt guess = clone\\ \tt guess_feedback = c<yellow> l<red> o<red> n<yellow> e<yellow> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: c<yellow> l<red> o<red> n<yellow> e<yellow> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt From the feedback:\\ \tt - 'c' is correct but in the wrong position.\\ \tt - 'l' is incorrect.\\ \tt - 'o' is incorrect.\\ \tt - 'n' is correct but in the wrong position.\\ \tt - 'e' is correct but in the wrong position.\\ \tt \\ \tt I need a word that includes 'c', 'n', and 'e' but in different positions, and does not include 'l' or 'o'. A possible word is "niece".\\ \tt </cot>\\ \tt guess: niece 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 3\\ \tt target_word = bench\\ \tt guess = niece\\ \tt guess_feedback = n<yellow> i<red> e<yellow> c<green> e<red> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: n<yellow> i<red> e<yellow> c<green> e<red> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt From the feedback:\\ \tt - 'n' is correct but in the wrong position.\\ \tt - 'i' is incorrect.\\ \tt - 'e' is correct but in the wrong position.\\ \tt - 'c' is correct and in the right position.\\ \tt - The second 'e' is incorrect.\\ \tt \\ \tt I need a word that includes 'n', 'e', and 'c' with 'c' in the third position, and does not include 'i' or a second 'e'. A possible word is "dance".\\ \tt </cot>\\ \tt guess: dance 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 4\\ \tt target_word = bench\\ \tt guess = dance\\ \tt guess_feedback = d<red> a<red> n<green> c<green> e<yellow> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: d<red> a<red> n<green> c<green> e<yellow> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt From the feedback:\\ \tt - 'd' is incorrect.\\ \tt - 'a' is incorrect.\\ \tt - 'n' is correct and in the right position.\\ \tt - 'c' is correct and in the right position.\\ \tt - 'e' is correct but in the wrong position.\\ \tt \\ \tt I need a word that includes 'n', 'c', and 'e', with 'n' in the third position and 'c' in the fourth position. The 'e' should be in a different position than the last. A possible word is "uncle".\\ \tt </cot>\\ \tt guess: uncle 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 5\\ \tt target_word = bench\\ \tt guess = uncle\\ \tt guess_feedback = u<red> n<yellow> c<yellow> l<red> e<yellow> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 guess_feedback: u<red> n<yellow> c<yellow> l<red> e<yellow> 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <cot>\\ \tt From the feedback:\\ \tt - 'u' is incorrect.\\ \tt - 'n' is correct but in the wrong position.\\ \tt - 'c' is correct but in the wrong position.\\ \tt - 'l' is incorrect.\\ \tt - 'e' is correct but in the wrong position.\\ \tt \\ \tt I need a word that includes 'n', 'c', and 'e', with none of them in the positions they were in "uncle". A possible word is "coven".\\ \tt </cot>\\ \tt guess: coven 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 attempts = 6\\ \tt target_word = bench\\ \tt guess = coven\\ \tt guess_feedback = c<yellow> o<red> v<red> e<yellow> n<yellow> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game_result = LOSS 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}
